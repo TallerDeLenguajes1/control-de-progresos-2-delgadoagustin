@@ -15,7 +15,7 @@ namespace JuegoConsola
         maxSalud = 100
     }
 
-    //string[] Tipos = { "Guerrero", "Mago", "Arquero" };
+    //string[] tipos = { }; 
     public class Personaje
     {
         int velocidad, destreza, fuerza, nivel, armadura;
@@ -43,7 +43,7 @@ namespace JuegoConsola
             Nivel = valoresAleatorios.Next((int)Max.maxNivel);
             Armadura = valoresAleatorios.Next((int)Max.maxArmadura);
             Salud = valoresAleatorios.Next((int)Max.maxSalud);
-            //Tipo = 'asd';
+            //Tipo = tipos[(int)valoresAleatorios.Next(3)];
             Nombre = name;
             Apodo = nick;
 

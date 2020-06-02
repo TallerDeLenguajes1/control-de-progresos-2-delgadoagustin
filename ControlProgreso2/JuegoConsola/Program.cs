@@ -7,7 +7,7 @@ namespace JuegoConsola
         static void Main(string[] args)
         {
             Random valoresAleatorios = new Random();
-            valoresAleatorios.Next((int)Max.maxArmadura);
+            Console.WriteLine(valoresAleatorios.Next((int)Max.maxArmadura));
             
         }
     }
