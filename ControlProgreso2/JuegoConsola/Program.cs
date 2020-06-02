@@ -6,7 +6,9 @@ namespace JuegoConsola
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Random valoresAleatorios = new Random();
+            valoresAleatorios.Next((int)Max.maxArmadura);
+            
         }
     }
 }
