@@ -24,7 +24,10 @@ namespace JuegoConsola
                 Lista.Add(pj);
             }
 
-            foreach ()
+            foreach (Personaje pj in Lista)
+            {
+                Console.WriteLine(pj.Nombre + " " + pj.Apodo + " " + pj.Edad);
+            }
 
         }
     }
