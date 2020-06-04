@@ -64,7 +64,7 @@ namespace JuegoConsola
             int VA = PD * ED;
             int PDEF = Rival.Armadura * Rival.Velocidad;
             int DM = ((VA * ED) - PDEF / (int)Max.MDP) * 100;
-            Rival.Salud -= DM
+            Rival.Salud -= DM;
         }
     }
 }
