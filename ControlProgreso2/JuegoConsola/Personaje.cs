@@ -12,7 +12,8 @@ namespace JuegoConsola
         maxNivel = 10,
         maxArmadura = 10,
         maxEdad = 300,
-        maxSalud = 100
+        maxSalud = 100,
+        MDP = 50000
     }
 
     enum tipos
@@ -53,6 +54,17 @@ namespace JuegoConsola
             Apodo = nick;
             FecNac = date;
             Edad = DateTime.Now.Year - FecNac.Year;
+        }
+
+        void Ataque(Personaje Rival)
+        {
+            Random gen = new Random();
+            int PD = Destreza * Fuerza * Nivel;
+            int ED = gen.Next(100) + 1;
+            int VA = PD * ED;
+            int PDEF = Rival.Armadura * Rival.Velocidad;
+            int DM = ((VA * ED) - PDEF / (int)Max.MDP) * 100;
+            Rival.Salud -= DM
         }
     }
 }
