@@ -6,9 +6,12 @@ namespace JuegoConsola
     {
         static void Main(string[] args)
         {
-            Random valoresAleatorios = new Random();
-            Console.WriteLine(valoresAleatorios.Next((int)Max.maxArmadura));
-            
+            DateTime fecha = new DateTime(1984, 6, 3);
+            Personaje p1 = new Personaje("nombre", "apodo", fecha);
+            Console.WriteLine(p1.Armadura);
+            Console.WriteLine(p1.Edad);
+            Console.WriteLine(p1.Tipo);
+
         }
     }
 }

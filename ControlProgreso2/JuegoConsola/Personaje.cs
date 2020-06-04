@@ -15,13 +15,17 @@ namespace JuegoConsola
         maxSalud = 100
     }
 
-    //string[] tipos = { }; 
+    enum tipos
+    {
+        Guerrero,
+        Mago,
+        Arquero
+    }
     public class Personaje
     {
-        int velocidad, destreza, fuerza, nivel, armadura;
+        int velocidad, destreza, fuerza, nivel, armadura, salud, edad;
         string tipo, nombre, apodo;
         DateTime fecNac;
-        int salud;
 
         public int Velocidad { get => velocidad; set => velocidad = value; }
         public int Destreza { get => destreza; set => destreza = value; }
@@ -33,8 +37,9 @@ namespace JuegoConsola
         public string Apodo { get => apodo; set => apodo = value; }
         public DateTime FecNac { get => fecNac; set => fecNac = value; }
         public int Salud { get => salud; set => salud = value; }
+        public int Edad { get => edad; set => edad = value; }
 
-        public Personaje(string name, string nick)
+        public Personaje(string name, string nick, DateTime date)
         {
             Random valoresAleatorios = new Random();
             Velocidad = valoresAleatorios.Next((int)Max.maxVelocidad);
@@ -43,12 +48,11 @@ namespace JuegoConsola
             Nivel = valoresAleatorios.Next((int)Max.maxNivel);
             Armadura = valoresAleatorios.Next((int)Max.maxArmadura);
             Salud = valoresAleatorios.Next((int)Max.maxSalud);
-            //Tipo = tipos[(int)valoresAleatorios.Next(3)];
+            Tipo = Enum.GetName(typeof(tipos), valoresAleatorios.Next(3));
             Nombre = name;
             Apodo = nick;
-
-            int añorandom = DateTime.Now.Year - valoresAleatorios.Next((int)Max.maxEdad);
-            FecNac = new DateTime(añorandom, (int)valoresAleatorios.Next(1, 12), (int)valoresAleatorios.Next(1, 30));
+            FecNac = date;
+            Edad = DateTime.Now.Year - FecNac.Year;
         }
     }
 }
